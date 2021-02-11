@@ -10,22 +10,30 @@ public class SnakeAndLadder {
 		int dice = r.nextInt(6) + 1;
 		System.out.println("Dice value : " + dice);
 
-		int position = 0, option = r.nextInt(3);
-		// option-0=ladder,1=snake,2=no-play
+		int position = 0;
 
-		switch (option) {
-		case 0:
-			position = position + dice;
-			System.out.println("Player climbs ladder : " + position);
-			break;
-		case 1:
-			position = position - dice;
-			System.out.println("Snake pulls the player : " + position);
-			break;
-		case 2:
-			System.out.println("Player is in no-play : " + position);
-			break;
+		while (position <= 100) {
+			int option = r.nextInt(3);
+			// option-0=ladder,1=snake,2=no-play
 
+			switch (option) {
+			case 0:
+				position = position + dice;
+				System.out.println("Player climbs ladder : " + position);
+				break;
+			case 1:
+				if (position >= 0) {
+					position = position - dice;
+					System.out.println("Snake pulls the player : " + position);
+				} else {
+					position = 0;
+					System.out.println("Snake pulls the player : " + position);
+				}
+				break;
+			case 2:
+				System.out.println("Player is in no-play : " + position);
+				break;
+			}
 		}
 
 	}
