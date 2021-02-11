@@ -10,7 +10,7 @@ public class SnakeAndLadder {
 		int dice = r.nextInt(6) + 1;
 		System.out.println("Dice value : " + dice);
 
-		int position = 0;
+		int position = 0, count = 0;
 
 		while (position <= 100) {
 			int option = r.nextInt(3);
@@ -29,21 +29,25 @@ public class SnakeAndLadder {
 			case 0:
 				position = position + dice;
 				System.out.println("Player climbs ladder : " + position);
+				count++;
 				break;
 
 			case 1:
+				position = position - dice;
 				if (position >= 0) {
-					position = position - dice;
 					System.out.println("Snake pulls the player : " + position);
 				} else {
 					position = 0;
 					System.out.println("Snake pulls the player : " + position);
 				}
+				count++;
 				break;
 			case 2:
 				System.out.println("Player is in no-play : " + position);
+				count++;
 				break;
 			}
+			System.out.println("count : " + count );
 		}
 
 	}
