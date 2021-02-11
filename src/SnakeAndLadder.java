@@ -1,11 +1,9 @@
 
 public class SnakeAndLadder {
-	public static final int StartPos = 0;
-	public static final int WinPos = 100;
-
-	public static void main(String[] args) {
-
-		System.out.println("Game starts at position : " + StartPos);
+		public static void main(String[] args) {
+			
+			int start=0,end=100;
+		System.out.println("Game starts at position : " + start);
 
 	}
 
