@@ -11,7 +11,7 @@ public class SnakeAndLadder {
 		System.out.println("Dice value : " + dice);
 
 		int player1Position = 0, player2Position = 0, count = 0;
-		boolean player1 = true, player2 = false;
+		boolean player1 = false, player2 = false;
 
 		while (player1Position <= 100 && player2Position <= 100) {
 			int option = r.nextInt(3);
@@ -47,7 +47,7 @@ public class SnakeAndLadder {
 					count++;
 				} else {
 					player2Position = player2Position + dice;
-					System.out.println("Player2 climbs ladder : " + player1Position);
+					System.out.println("Player2 climbs ladder : " + player2Position);
 					player2 = true;
 					player1 = false;
 					count++;
@@ -62,7 +62,7 @@ public class SnakeAndLadder {
 						System.out.println("Snake pulls the player1 : " + player1Position);
 					} else {
 						player1Position = 0;
-						System.out.println("Snake pulls the player1 : " + player1Position);
+						System.out.println("Snake pulls the player1 : " + player2Position);
 					}
 					player1 = true;
 					player2 = false;
